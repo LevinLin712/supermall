@@ -1,0 +1,121 @@
+<template>
+  <div>
+    <scroll class="content">
+      <ul>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+        <li>222222</li>
+      </ul>
+    </scroll>
+  </div>
+</template>
+
+<script>
+  import Scroll from 'components/common/scroll/Scroll.vue'
+  
+  export default{
+    name:'Profile',
+    components:{
+      Scroll,
+    }
+  }
+</script>
+
+<style scoped>
+  .content{
+    height:500px;
+    background-color:red;
+    overflow:hidden;
+  }
+</style>
