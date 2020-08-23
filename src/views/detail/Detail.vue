@@ -13,6 +13,7 @@
     </scroll>
     <detail-bottom-bar @addEvent="addToCart"></detail-bottom-bar>
     <back-top @click.native="backClick" v-show="isShowbackTop"></back-top>
+    <!-- <toast :message="message" :show="show"></toast> -->
   </div>
 </template>
 
@@ -29,9 +30,12 @@
   import Scroll from 'components/common/scroll/Scroll.vue'
   import GoodsList from 'components/content/goods/GoodsList.vue'
   import BackTop from 'components/content/backTop/BackTop.vue'
+  // import Toast from 'components/common/toast/Toast.vue'
   
   import {getDetail,Goods,Shop,GoodsParam,getRecommend} from 'network/detail.js'
   import {debounce} from 'common/utils.js'
+  
+  import { mapActions } from 'vuex'
   
   export default{
     name:'Detail',
@@ -47,6 +51,7 @@
       Scroll,
       GoodsList,
       BackTop,
+      // Toast,
     },
     data(){
       return{
@@ -62,6 +67,8 @@
         getThemeTopY:null,
         currentIndex:0,
         isShowbackTop:false,
+        message:'',
+        show:false
       }
     },
     created(){
@@ -120,6 +127,9 @@
       })
     },
     methods:{
+      // 将actions里的函数映射过来
+      ...mapActions(['addCart']),
+      
       imageLoad(){
         this.$refs.scroll.refresh()
         
@@ -178,9 +188,27 @@
         product.desc = this.goods.desc;
         product.price = this.goods.realPrice;
         product.iid = this.iid;
-        // 2.将商品添加到购物车
+        
+        // 2.将商品添加到购物车(1.Promise 2.mapActions)
         // this.$store.commit('addCart',product)
-        this.$store.dispatch('addCart',product)
+        
+        this.addCart(product).then(res => {
+          // this.show = true;
+          // this.message = res;
+          
+          // setTimeout(() => {
+          //   this.show = false;
+          //   this.message = ''
+          // },1500)
+          
+          this.$toast.show(res,1500)
+          
+          // console.log(this.$toast)
+        })
+        
+        // this.$store.dispatch('addCart',product).then(res => {
+        //   console.log(res)
+        // })
       }
     }
   }
